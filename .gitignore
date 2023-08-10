@@ -1,0 +1,11 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.vscode
+
+bin/*
+.DS_Store
+config_test.yaml
+dumps*

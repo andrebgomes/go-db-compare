@@ -1,0 +1,41 @@
+#### Databases ####
+database: # this is the one that will be used in case we are doing the strategy dump
+  label: label1
+  host: 127.0.0.1
+  port: 8306
+  database: database1
+  username: root
+  password: password
+database2: # database also used when doing strategy live or twodumps
+  label: label2
+  host: 127.0.0.1
+  port: 8306
+  database: database2
+  username: root
+  password: password
+#### Directories to dump or compare (database -> dir, database2 -> dir2) ####
+dir: dumps1 # directory used to insert the Ncsv's when strategy is dump
+dir2: dumps2 # directory also used when doing strategy live or twodumps
+#### Database fields to ignore when comparing ####
+ignore_tables: # Ignores this tables completely
+  - tableName1
+  - tableName2
+ignore_columns: # Ignores this columns from all tables
+  - column1
+  - column2
+ingnore_table_columns: # Ignores specified columns from specified tables
+  - table_name: tableName1
+    columns:
+      - column1
+      - column2
+  - table_name: tableName2
+    columns:
+      - column1
+      - column2
+#### Database types to ignore when comparing ####
+ignore_types:
+  - datetime
+  - timestamp
+#### Diff parameters ####
+detailed: false # if true, shows differences for each table. if false, shows only the tables that have differences
+limit: 3 # number of differences shown for each table when detailed is true
